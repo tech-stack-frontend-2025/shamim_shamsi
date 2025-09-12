@@ -1,0 +1,121 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.wrapper {
+    width: 150px;
+    height: 170px;
+    background: rgba(53, 93, 118, 0.819);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 1);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.wrapper h1{
+    font-size: 15px;
+    text-align: center;
+}
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 15px;
+    margin: 15px 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    font-size: 8px;
+    color: white;
+}
+.input-box input::placeholder
+{
+    color: white;
+}
+.wrapper .btn
+{
+    width: 35%;
+    height: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0,.1);
+    cursor: pointer;
+    font-size: 7px;
+    color: rgb(55, 206, 148);
+    margin: 17px 0 0 0;
+}
+.submit-btn {
+    width: 35%;
+    height: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0,.1);
+    cursor: pointer;
+    font-size: 7px;
+    color: rgb(55, 206, 148);
+    margin: 17px 0 0 0;
+    position: relative;
+    padding: 14px 40px;
+    cursor: pointer;
+    }
+.snake 
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.snake::before 
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    border-top-color: #00fff2;
+    animation: snake-move 2s linear infinite;
+}
+@keyframes snake-move 
+{
+    0% {
+    border-top-color: #00fff2;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    }
+    25% {
+    border-top-color: transparent;
+    border-right-color: #00fff2;
+    }
+    50% {
+    border-right-color: transparent;
+    border-bottom-color: #00fff2;
+    }
+    75% {
+    border-bottom-color: transparent;
+    border-left-color: #00fff2;
+    }
+    100% {
+    border-left-color: transparent;
+    border-top-color: #00fff2;
+    }
+}
